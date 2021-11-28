@@ -1,0 +1,20 @@
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: visibility 500ms var(--timing-function),
+    opacity 1000ms var(--timing-function);
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.1) rotate(180deg);
+  transition: transform 500ms var(--timing-function);
+}
