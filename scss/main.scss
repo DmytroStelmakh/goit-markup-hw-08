@@ -1,6 +1,7 @@
 //UTILS
 @import "./utils/variables";
 @import "./utils/visually-hidden";
+@import "./utils/breakpoints";
 
 //BASE
 @import "./base/common";
@@ -17,7 +18,7 @@
 @import "./components/backdrop";
 @import "./components/modal";
 @import "./components/modal-form";
-@import "./components/footer-title";
+@import "./components/footer-join";
 
 //LAYOUT
 @import "./layout/header";

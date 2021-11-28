@@ -1,140 +1,216 @@
-.modal-paragraph {
-  text-align: center;
+.modal-btn {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.modal-close {
+  width: 18px;
+  height: 18px;
+
+  .modal-btn:hover &,
+  .modal-btn:focus & {
+    fill: var(--accent-color);
+    cursor: pointer;
+  }
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.modal-title {
   margin-bottom: 12px;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1.15;
+  font-size: 4vw;
+  line-height: 1.5;
+  text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  @media screen and(min-width:480px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
 }
 
-.modal-contact {
+.modal-form-label {
   margin-bottom: 10px;
-}
-
-.modal-comment {
-  margin-bottom: 20px;
-}
-
-.modal-label {
   font-size: 12px;
-  line-height: 1.16;
+  line-height: 1.67;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
 }
-.modal-input-svg {
-  display: block;
-  position: relative;
-}
-.svg-form {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 15px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+.modal-form-label-message {
+  margin-bottom: 20px;
 }
 
-.modal-text {
+.form-input-wrap {
   display: block;
-  margin-bottom: 4px;
   position: relative;
+  margin-top: 4px;
 }
 
-.modal-input {
+.modal-form-input {
   width: 100%;
   height: 40px;
+  padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  caret-color: var(--accent-color);
+  transition: border-color 250ms var(--timing-function);
   cursor: pointer;
-  padding-left: 42px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  outline: none;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover,
-  &:focus {
+
+  .form-input-wrap:hover & {
     border-color: var(--accent-color);
   }
-  &:hover + .svg-form,
-  &:focus + .svg-form {
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+}
+
+.modal-form-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  fill: var(--title-text-color);
+  transition: fill 250ms var(--timing-function);
+
+  .form-input-wrap:hover & {
+    fill: var(--accent-color);
+  }
+  .modal-form-input:focus + & {
     fill: var(--accent-color);
   }
 }
 
-::placeholder {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
-  color: rgba(117, 117, 117, 0.5);
-}
-.textarea {
-  resize: none;
+.modal-form-message {
   width: 100%;
   height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
+  margin-top: 4px;
   padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  caret-color: var(--accent-color);
+  transition: border-color 250ms var(--timing-function);
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+  }
+
   &:hover,
   &:focus {
+    outline: none;
     border-color: var(--accent-color);
   }
 }
-.checkbox {
-  font-size: 14px;
-  line-height: 1.71;
-  letter-spacing: 0.01em;
-  color: var(--primary-text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-}
-.input-checkbox {
-  position: absolute;
-  -webkit-appearance: none;
-}
-.check-box {
-  position: absolute;
-  width: 16px;
-  height: 15px;
-  left: 54px;
-  background-image: url(../images/checkbox.svg);
-  background-position: center;
-  background-repeat: no-repeat;
+
+.modal-form-button {
+  align-self: center;
+  min-width: 200px;
+  min-height: 50px;
+  border: 0;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: var(--logo-bg-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms var(--timing-function);
+
   &:hover,
   &:focus {
-    background-image: url(../images/hf-checkbox.svg);
+    background-color: var(--hero-but-hover);
+    cursor: pointer;
   }
 }
 
-.input-checkbox:checked + .check-box {
-  background-color: var(--accent-color);
-  background-image: url(../images/icon-check.svg);
+.modal-form-checkbox-label {
+  position: relative;
+  padding-left: 24px;
+  @media screen and (min-width: 1200px) {
+    padding-left: 0;
+  }
+
+  &::before {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    content: "";
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    cursor: pointer;
+    border: 2px solid var(--title-text-color);
+    border-radius: 2px;
+    // transform: translateY(-50%);
+    transition: border-color 250ms var(--timing-function);
+    @media screen and(min-width: 480px) {
+      top: 0;
+    }
+    @media screen and(min-width: 1200px) {
+      position: static;
+    }
+  }
+
+  &:hover::before {
+    border-color: var(--accent-color);
+  }
+
+  .modal-check-box:focus + &::before {
+    border-color: var(--accent-color);
+  }
+
+  .modal-check-box:checked + &::before {
+    border: none;
+    background-image: url(../images/icon-check.svg);
+  }
+  @media screen and (min-width: 480px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 
-.checkbox-link {
+.modal-form-link {
+  text-decoration-line: underline;
   color: var(--accent-color);
-}
-.span-modal {
-  margin-left: 7px;
-}
-.modal-label-btn {
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: 50px;
-  background-color: var(--accent-color);
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  color: var(--logo-bg-white-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  @media screen and(min-width:480px) {
+    margin-left: 5px;
+  }
 }
