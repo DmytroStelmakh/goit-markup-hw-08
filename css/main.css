@@ -559,12 +559,17 @@ a {
 
 .join {
   display: inline-block;
-  margin-bottom: 60px;
 }
 
 @media screen and (min-width: 1200px) {
   .join {
     padding-bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .join {
+    margin-bottom: 60px;
   }
 }
 
