@@ -1,6 +1,7 @@
 .join {
   display: inline-block;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
+
   @media screen and(min-width: $desktop) {
     padding-bottom: 0px;
   }

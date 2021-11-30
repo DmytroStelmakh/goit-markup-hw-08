@@ -109,6 +109,7 @@
 
 .portfolio__link {
   display: block;
+  height: 100%;
   transition: box-shadow 250ms var(--timing-function);
 
   &:hover,
@@ -131,6 +132,7 @@
 }
 
 .portfolio__img--text {
+  overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
