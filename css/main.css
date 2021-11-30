@@ -1668,7 +1668,6 @@ a {
 }
 
 .portfolio__img--text {
-  overflow: scroll;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1687,6 +1686,12 @@ a {
   color: var(--logo-bg-white-color);
   background-color: rgba(33, 150, 243, 0.9);
   transition: transform 250ms var(--timing-function);
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio__img--text {
+    overflow: scroll;
+  }
 }
 
 .project {
